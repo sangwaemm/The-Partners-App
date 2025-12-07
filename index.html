@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoopPartners Management</title>
+    <meta name="description" content="Manage members, loans, contributions, and investments for your cooperative" />
+    <meta name="theme-color" content="#1e293b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Coop Partners" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e293b' width='192' height='192'/><text x='50%' y='50%' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central'>CP</text></svg>" />
+    <link rel="manifest" href="/manifest.json" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -28,5 +36,15 @@
   <body>
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
+   <script>
+     // Register service worker for PWA offline support
+     if ('serviceWorker' in navigator) {
+       navigator.serviceWorker.register('/sw.js').then((reg) => {
+         console.log('[PWA] Service worker registered:', reg);
+       }).catch((err) => {
+         console.log('[PWA] Service worker registration failed:', err);
+       });
+     }
+   </script>
 </body>
 </html>
