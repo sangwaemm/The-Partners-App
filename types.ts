@@ -52,6 +52,20 @@ export interface Loan {
   dateIssued: string;
   dueDate: string;
   status: LoanStatus;
+  monthsPaidHistory?: { months: number; date: string }[];
+}
+
+export interface Investment {
+  id: string;
+  name: string; // e.g., "Real Estate", "Business", "Equipment"
+  description?: string;
+  totalCapital: number; // Initial capital invested
+  totalExpenses: number; // Sum of all expenses
+  totalProfits: number; // Sum of all profits
+  dateCreated: string;
+  lastUpdated: string;
+  expenseHistory?: { amount: number; description: string; date: string }[];
+  profitHistory?: { amount: number; description: string; date: string }[];
 }
 
 export interface Activity {
@@ -62,6 +76,9 @@ export interface Activity {
   amountEarned: number;
   date: string;
   category: string;
+  actorName?: string; // person who performed the activity
+  actorId?: string; // member ID for stronger linking
+  activityType?: 'CONTRIBUTION' | 'GIVEN_LOAN' | 'PAYING_LOAN' | 'PAYING_PROFIT' | 'EXPENSE' | 'INVESTMENT' | 'GENERAL';
 }
 
 export interface Notification {
@@ -84,6 +101,7 @@ export interface AppState {
   contributions: Contribution[];
   loans: Loan[];
   activities: Activity[];
+  investments: Investment[];
   notifications: Notification[];
   language: 'en' | 'rw';
   settings: AppSettings;
@@ -93,3 +111,29 @@ export const DEFAULT_SHARE_PRICE = 100000;
 export const CONTRIBUTION_AMOUNT = 8000;
 export const CONTRIBUTION_PERIOD_DAYS = 28;
 export const DEFAULT_LOAN_INTEREST = 10; // 10%
+
+export interface DataContextType extends AppState {
+  login: (email: string, role: UserRole) => void;
+  logout: () => void;
+  setLanguage: (lang: 'en' | 'rw') => void;
+  addMember: (member: Omit<Member, 'id'>) => void;
+  updateMember: (id: string, updates: Partial<Member>) => void;
+  addLoan: (loan: Omit<Loan, 'id'>) => void;
+  deleteLoan: (id: string) => void;
+  payLoan: (loanId: string, principalAmount: number, interestAmount: number, monthsPaid?: number) => void;
+  addContribution: (contribution: Omit<Contribution, 'id'>) => void;
+  deleteContribution: (id: string) => void;
+  addActivity: (activity: Omit<Activity, 'id'>) => void;
+  deleteActivity: (id: string) => void;
+  addInvestment: (investment: Omit<Investment, 'id'>) => void;
+  updateInvestment: (id: string, updates: Partial<Investment>) => void;
+  deleteInvestment: (id: string) => void;
+  addInvestmentExpense: (investmentId: string, amount: number, description: string, date: string) => void;
+  addInvestmentProfit: (investmentId: string, amount: number, description: string, date: string) => void;
+  updateSettings: (newSettings: AppSettings) => void;
+  markNotificationAsRead: (id: string) => void;
+  clearNotifications: () => void;
+  translations: Record<string, string>;
+  exportData: () => string;
+  importData: (jsonData: string) => boolean;
+}
