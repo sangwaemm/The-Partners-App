@@ -11,7 +11,7 @@ The **Coop Partners Management App** is a **Progressive Web App (PWA)**, which m
 ### For **iPhone (iOS)**
 
 1. **Open Safari** on your iPhone.
-2. **Go to:** https://solid-zebra-xxxx.app.github.dev (replace with your actual public URL from your Codespaces).
+2. **Go to:** https://sangwaemm.github.io/The-Partners-App (this is the deployed GitHub Pages URL). Pages may take a minute to become available after deployment.
 3. **Tap the Share button** (↑ in the bottom center).
 4. **Scroll down and tap "Add to Home Screen"**.
 5. **Enter the app name** (e.g., "Coop Partners") or keep the default.
@@ -27,7 +27,7 @@ The **Coop Partners Management App** is a **Progressive Web App (PWA)**, which m
 #### **Option 1: Using Chrome (Recommended)**
 
 1. **Open Chrome** on your Android phone.
-2. **Go to:** https://solid-zebra-xxxx.app.github.dev (replace with your actual public URL).
+2. **Go to:** https://sangwaemm.github.io/The-Partners-App (this is the deployed GitHub Pages URL). Pages may take a minute to become available after deployment.
 3. **Tap the menu icon** (⋮ three dots in the top-right corner).
 4. **Tap "Install app"** or **"Add to Home screen"**.
 5. **Confirm** by tapping "Install" in the pop-up.
@@ -36,7 +36,7 @@ The **Coop Partners Management App** is a **Progressive Web App (PWA)**, which m
 #### **Option 2: Using Samsung Internet (Samsung Phones)**
 
 1. **Open Samsung Internet** on your phone.
-2. **Go to:** https://solid-zebra-xxxx.app.github.dev
+2. **Go to:** https://sangwaemm.github.io/The-Partners-App
 3. **Tap the menu icon** (⋮).
 4. **Tap "Add to Home screen"**.
 5. **Confirm** and the app will be installed.
@@ -60,7 +60,7 @@ Once installed, the app works **just like a native app** with:
 Share this link with your cooperative members:
 
 ```
-https://solid-zebra-xxxx.app.github.dev
+https://sangwaemm.github.io/The-Partners-App
 ```
 
 **Replace `solid-zebra-xxxx.app.github.dev` with your actual GitHub Pages or public URL.**
